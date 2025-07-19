@@ -1,0 +1,586 @@
+:root {
+
+    --primary: #ff6b9d;  
+    --primary-light: #ffb8d1;
+    --danger: #ff4757;
+    --success: #9cdfc1;
+    --warning: #ffd166;
+    --info: #a2d6f9;
+    --text: #4a2c40;    /* Deep romantic purple */
+    --bg: #fff0f6;      /* Soft pink background */
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --shadow-sm: 0 1px 3px rgba(255, 105, 157, 0.15);
+    --shadow-md: 0 4px 6px rgba(255, 105, 157, 0.15);
+    --shadow-lg: 0 10px 15px rgba(255, 105, 157, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem;
+    transition: background 0.3s ease;
+}
+
+
+
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 12px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    transition: width 0.6s ease, background 0.3s ease;
+}
+
+#progress-text {
+    color: var(--text);
+    font-weight: 500;
+    min-width: 100px;
+}
+
+/* Theme Switch */
+.theme-switch {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.theme-switch:hover {
+    transform: scale(1.1);
+}
+
+/* Rest of your existing styles... */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+    position: relative;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1), background 0.3s;
+    border-radius: 999px;
+}
+
+.progress-tooltip {
+    position: absolute;
+    top: -40px;
+    background: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    box-shadow: var(--shadow-sm);
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.progress-container:hover .progress-tooltip {
+    opacity: 1;
+}
+
+.controls {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-controls, .item-controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.item-controls {
+    margin-bottom: 0;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item-controls.visible {
+    opacity: 1;
+    height: auto;
+    margin-bottom: 0;
+    padding-top: 1rem;
+}
+
+input, select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.btn-primary {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    color: white;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary span {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, var(--primary-light), var(--primary));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-primary:hover::after {
+    opacity: 1;
+}
+
+#new-category, #new-item {
+    flex-grow: 1;
+}
+
+#category-select {
+    min-width: 180px;
+}
+
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.category {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.4s forwards;
+}
+
+.category:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.category-title {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 1.125rem;
+}
+
+.delete-category {
+    background: var(--danger);
+    color: white;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.delete-category:hover {
+    transform: scale(1.1);
+}
+
+.items-list {
+    list-style: none;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.item input[type="checkbox"] {
+    margin-right: 0.75rem;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.item label {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.item.completed label {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.delete-item {
+    color: var(--danger);
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.delete-item:hover {
+    background: rgba(239, 68, 68, 0.1);
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .category-controls, .item-controls {
+        flex-direction: column;
+    }
+    
+    .progress-bar {
+        width: 200px;
+    }
+}
+
+
+.progress-fill {
+    background: var(--primary); /* Default color */
+}
+
+[data-theme="light"] .progress-fill {
+    background: linear-gradient(to right, #ff6b9d, #ffb8d1);
+}
+
+[data-theme="dark"] .progress-fill {
+    background: linear-gradient(to right, #5c33f6, #8a63f8);
+}
+
+/* Ensure progress text is visible in dark theme */
+[data-theme="dark"] #progress-text {
+    color: #f1f2f6;
+}
+
+/* Dark theme progress bar background */
+[data-theme="dark"] .progress-bar {
+    background: rgba(92, 51, 246, 0.2);
+}
+
+[data-theme="dark"] {
+    /* Dark Theme (Batman) - Yellow/Black */
+    --primary: #f5d90a;  /* Batman yellow */
+    --primary-light: #f8e54e;
+    --danger: #e63946;
+    --success: #52b788;
+    --warning: #f4a261;
+    --info: #457b9d;
+    --text: #f1faee;  /* Off-white */
+    --bg: #0a0a0a;    /* Pure black */
+    --card-bg: rgba(20, 20, 20, 0.9); /* Slightly lighter black */
+    --shadow-sm: 0 1px 3px rgba(245, 217, 10, 0.2);
+    --shadow-md: 0 4px 6px rgba(245, 217, 10, 0.2);
+    --shadow-lg: 0 10px 15px rgba(245, 217, 10, 0.1);
+}
+
+/* Batman Theme Specific Styles */
+[data-theme="dark"] {
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(245, 217, 10, 0.05) 0, transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(245, 217, 10, 0.05) 0, transparent 25%);
+}
+
+[data-theme="dark"] .category,
+[data-theme="dark"] .item {
+    border: 1px solid rgba(245, 217, 10, 0.15);
+    background: rgba(30, 30, 30, 0.8);
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select {
+    background: rgba(40, 40, 40, 0.8);
+    border-color: #333;
+    color: #f1faee;
+}
+
+[data-theme="dark"] .progress-bar {
+    background: rgba(245, 217, 10, 0.2);
+}
+
+[data-theme="dark"] .progress-fill {
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    box-shadow: 0 0 8px rgba(245, 217, 10, 0.3);
+}
+
+[data-theme="dark"] .btn-primary {
+    color: #0a0a0a; /* Black text on yellow buttons */
+    font-weight: 600;
+}
+
+[data-theme="dark"] .theme-switch {
+    background: var(--primary);
+    color: #0a0a0a;
+}
+
+[data-theme="light"] {
+    /* Romantic Theme - Enhanced */
+    --primary: #ff6b9d;  /* Romantic pink */
+    --primary-light: #ffb8d1;
+    --danger: #ff4757;
+    --success: #9cdfc1;
+    --warning: #ffd166;
+    --info: #a2d6f9;
+    --text: #4a2c40;    /* Deep romantic purple */
+    --bg: #fff0f6;      /* Soft pink background */
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --shadow-sm: 0 1px 3px rgba(255, 105, 157, 0.15);
+    --shadow-md: 0 4px 6px rgba(255, 105, 157, 0.15);
+    --shadow-lg: 0 10px 15px rgba(255, 105, 157, 0.1);
+}
+
+/* Romantic Theme Special Effects */
+[data-theme="light"] {
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.15) 0, transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(255, 192, 203, 0.15) 0, transparent 25%);
+    animation: floatHearts 60s linear infinite;
+}
+
+@keyframes floatHearts {
+    0% { background-position: -100px 10%; }
+    100% { background-position: calc(100vw + 100px) 30%; }
+}
+
+[data-theme="light"] .category,
+[data-theme="light"] .item {
+    border: 1px solid rgba(255, 105, 157, 0.2);
+    box-shadow: 0 2px 8px rgba(255, 105, 157, 0.1);
+    transition: all 0.3s ease;
+}
+
+[data-theme="light"] .category:hover,
+[data-theme="light"] .item:hover {
+    box-shadow: 0 4px 12px rgba(255, 105, 157, 0.2);
+    transform: translateY(-2px);
+}
+
+[data-theme="light"] .progress-bar {
+    background: rgba(255, 105, 157, 0.15);
+}
+
+[data-theme="light"] .progress-fill {
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    box-shadow: 0 0 10px rgba(255, 105, 157, 0.3);
+}
+
+[data-theme="light"] .btn-primary {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(255, 105, 157, 0.3);
+}
+
+[data-theme="light"] .theme-switch {
+    background: var(--primary);
+    box-shadow: 0 2px 10px rgba(255, 105, 157, 0.3);
+}
+
+/* Floating Hearts (Subtle) */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    opacity: 0.08;
+    animation: float-up 15s linear infinite;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(100vh) translateX(10vw);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(30vw);
+        opacity: 0;
+    }
+}

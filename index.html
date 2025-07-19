@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Bucket List ✨</title>
+    <!-- Add this to your head section -->
+    <meta name="theme-color" content="#ff6b9d" id="theme-meta">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Our Bucket List</h1>
+            <div class="progress-container" id="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <span id="progress-text">0% Complete</span>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="category-controls">
+                <input type="text" id="new-category" placeholder="New category name">
+                <button id="add-category-btn" class="btn-primary">
+                    <span>+ Add Category</span>
+                </button>
+            </div>
+            <div class="item-controls" id="item-controls">
+                <select id="category-select"></select>
+                <input type="text" id="new-item" placeholder="New item">
+                <button id="add-item-btn" class="btn-primary">
+                    <span>+ Add Item</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="categories-container" id="categories-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
